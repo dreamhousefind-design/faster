@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faster 🚕</title>
+
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<div class="container">
+  <h2>Faster🚕</h2>
+
+  <!-- SERVICES -->
+  <h3>Our Services</h3>
+  <div class="services">
+    <div class="card">🚲<p>Bike</p></div>
+    <div class="card">🛺<p>Auto</p></div>
+    <div class="card">🚗<p>Car</p></div>
+    <div class="card">📦<p>Parcel</p></div>
+  </div>
+
+  <!-- INPUT -->
+  <input type="text" id="pickup" placeholder="Enter Pickup">
+  <input type="text" id="drop" placeholder="Enter Drop">
+
+  <select id="rideType">
+    <option value="bike">Bike</option>
+    <option value="auto">Auto</option>
+    <option value="car">Car</option>
+    <option value="parcel">Parcel</option>
+  </select>
+
+  <button onclick="setRoute()">Book Ride</button>
+  <button onclick="startTracking()">📍 Track My Location</button>
+
+  <p id="result"></p>
+
+  <!-- RIDE CARD -->
+  <div id="rideCard">
+    <h3>🚕 Ride Confirmed</h3>
+    <p>Driver: <span id="driverName"></span></p>
+    <p>Vehicle: <span id="vehicle"></span></p>
+    <p>Number: <span id="number"></span></p>
+    <p>Fare: ₹<span id="fare"></span></p>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
